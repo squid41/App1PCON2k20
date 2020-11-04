@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignInUp.RegisterActivity"></activity>
+        <activity android:name=".MemoryActivity2" ></activity>
+        <activity android:name=".SignInUp.MemoryActivity" />
+        <activity android:name=".SignInUp.RegisterActivity" />
         <activity android:name=".dashboard" />
         <activity android:name=".SignInUp.login" />
         <activity android:name=".MainActivity">
@@ -19,6 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
