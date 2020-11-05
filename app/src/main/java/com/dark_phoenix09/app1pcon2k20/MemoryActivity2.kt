@@ -16,14 +16,14 @@ class MemoryActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_memory2)
 
-        val images = mutableListOf(R.drawable.ic_boy, R.drawable.ic_cloud, R.drawable.ic_home, R.drawable.ic_phone)
+        val images = mutableListOf(R.drawable.ic_boy, R.drawable.ic_cloud, R.drawable.ic_home, R.drawable.ic_phone,R.drawable.ic_email,R.drawable.ic_games_24px,R.drawable.ic_cancel_24px,R.drawable.ic_lock,R.drawable.ic_point,R.drawable.ic_point,R.drawable.round)
         // Add each image twice so we can create pairs
         images.addAll(images)
         // Randomize the order of images
         images.shuffle()
 
-        buttons = listOf(imageButton1, imageButton2, imageButton3, imageButton4, imageButton5,
-            imageButton6, imageButton7, imageButton8)
+        buttons = listOf(imageButton1,imageButton2,imageButton3,imageButton4,imageButton5, imageButton6,  imageButton7, imageButton8,
+            imageButton9, imageButton10, imageButton11,imageButton12,imageButton13,imageButton14,imageButton15,imageButton16,imageButton17,imageButton18,imageButton19,imageButton20)
 
         cards = buttons.indices.map { index ->
             MemoryCard(images[index])
