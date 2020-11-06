@@ -11,13 +11,12 @@
         android:layout_height="match_parent">
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/startworkoutbtn"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_alignParentTop="true"
             android:background="@drawable/round"
             android:padding="1dp"
-
             android:scaleType="centerCrop"
             android:src="@drawable/ic_games_24px"
             app:layout_constraintBottom_toBottomOf="parent"

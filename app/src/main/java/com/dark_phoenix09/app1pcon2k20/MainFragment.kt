@@ -36,8 +36,13 @@ class MainFragment : Fragment() {
                 finish()
             }
         }
-
+        startworkoutbtn.setOnClickListener {
+            requireActivity().run {
+                startActivity(Intent(this,work_out1::class.java))
+            }
+        }
     }
+
 
 
 }
