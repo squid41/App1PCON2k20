@@ -36,15 +36,8 @@ class MainFragment : Fragment() {
                 finish()
             }
         }
-        imageButton22.setOnClickListener {
-            requireActivity().run{
-                startActivity(Intent(this, CategoryActivity::class.java))
-                finish()
-            }
-        }
 
     }
-
 
 
 }
