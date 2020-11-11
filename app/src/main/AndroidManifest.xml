@@ -9,6 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".work_out1"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".work_out2_Exercise"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".CategoryActivity" ></activity>
+        <activity android:name=".SetActivity" ></activity>
+
         <activity android:name=".MemoryActivity2" ></activity>
         <activity android:name=".SignInUp.MemoryActivity" />
         <activity android:name=".SignInUp.RegisterActivity" />

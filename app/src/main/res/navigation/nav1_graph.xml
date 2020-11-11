@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav1_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/quizGameFragment"
+        android:name="com.dark_phoenix09.app1pcon2k20.QuizGameFragment"
+        android:label="QuizGameFragment" >
+        <action
+            android:id="@+id/action_quizGameFragment_to_quizWonFragment"
+            app:destination="@id/quizWonFragment" />
+        <action
+            android:id="@+id/action_quizGameFragment_to_quizLostFragment"
+            app:destination="@id/quizLostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizLostFragment"
+        android:name="com.dark_phoenix09.app1pcon2k20.QuizLostFragment"
+        android:label="QuizLostFragment" >
+        <argument
+            android:name="score"
+            app:argType="integer" />
+        <argument
+            android:name="wrongAnswers"
+            app:argType="string[]" />
+        <action
+            android:id="@+id/action_quizLostFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizWonFragment"
+        android:name="com.dark_phoenix09.app1pcon2k20.QuizWonFragment"
+        android:label="QuizWonFragment" >
+        <argument
+            android:name="score"
+            app:argType="integer" />
+        <argument
+            android:name="wrongAnswers"
+            app:argType="string[]" />
+        <action
+            android:id="@+id/action_quizWonFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.dark_phoenix09.app1pcon2k20.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_quizGameFragment"
+            app:destination="@id/quizGameFragment" />
+    </fragment>
+</navigation>

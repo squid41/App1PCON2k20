@@ -14,7 +14,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="@dimen/main_screen_image_height"
-            android:contentDescription="@string/image"
+            android:contentDescription="@string/workout"
             android:src="@drawable/workout_logo"/>
         <LinearLayout
             android:id="@+id/llStart"

@@ -14,14 +14,6 @@ import kotlinx.android.synthetic.main.set_token.view.*
 
 class SetActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_set)
-        setSupportActionBar(toolbar3)
-        setTitle(R.string.Sets)
-        imageButton7.setOnClickListener {
 
-        }
-    }
 
 }

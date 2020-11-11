@@ -14,6 +14,7 @@ import androidx.navigation.ui.NavigationUI
 import com.dark_phoenix09.app1pcon2k20.SignInUp.logout
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_set.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         // display Toast here...
         Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show()
         setSupportActionBar(toolbar)
+
         val navController = Navigation.findNavController(this, R.id.fragment)
         NavigationUI.setupWithNavController(nav_view, navController)
         NavigationUI.setupActionBarWithNavController(
