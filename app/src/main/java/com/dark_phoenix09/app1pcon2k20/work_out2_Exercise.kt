@@ -46,7 +46,8 @@ class work_out2_Exercise : AppCompatActivity() {
     }
     private fun setRestProgressBar(){
         progressBar.progress=restProcess
-        restTimer=object : CountDownTimer(10000,1000){
+        restTimer=object : CountDownTimer(10000,1000)
+        {
             override fun onTick(millisUnitFinished: Long) {
                 restProcess++
                 progressBar.progress=10-restProcess
