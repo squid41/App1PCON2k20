@@ -1,5 +1,6 @@
 package com.dark_phoenix09.app1pcon2k20
 
+import android.content.Intent
 import android.content.IntentSender
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -68,13 +69,13 @@ class work_out2_Exercise : AppCompatActivity() {
             }
             override fun onFinish() {
                 if(currentExercisePositions<exerciseList?.size!!-1)
+                {
                     setRestView()
+                }
                 else
                 {
-                    Toast.makeText(this@work_out2_Exercise,
-                            "Here now we will start the next rest timer.",
-                            Toast.LENGTH_SHORT
-                    ).show()
+                    finish()
+                    startActivity(Intent(this@work_out2_Exercise,Finish_workout::class.java))
                 }
             }
         }.start()
