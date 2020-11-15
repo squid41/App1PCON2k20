@@ -1,7 +1,11 @@
 package com.dark_phoenix09.app1pcon2k20
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.os.Handler
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.Toast
@@ -16,14 +20,13 @@ class MemoryActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_memory2)
 
-        val images = mutableListOf(R.drawable.ic_boy, R.drawable.ic_cloud, R.drawable.ic_home, R.drawable.ic_phone)
-        // Add each image twice so we can create pairs
+
+        val images = mutableListOf(R.drawable.ic_boy, R.drawable.ic_cloud, R.drawable.ic_home, R.drawable.ic_phone,R.drawable.ic_email,R.drawable.ic_games_24px,R.drawable.ic_cancel_24px,R.drawable.ic_lock,R.drawable.ic_point,R.drawable.ic_point,R.drawable.round)
         images.addAll(images)
-        // Randomize the order of images
         images.shuffle()
 
-        buttons = listOf(imageButton1, imageButton2, imageButton3, imageButton4, imageButton5,
-            imageButton6, imageButton7, imageButton8)
+        buttons = listOf(imageButton1,imageButton2,imageButton3,imageButton4,imageButton5, imageButton6,  imageButton7, imageButton8,
+            imageButton9, imageButton10, imageButton11,imageButton12,imageButton13,imageButton14,imageButton15,imageButton16,imageButton17,imageButton18,imageButton19,imageButton20)
 
         cards = buttons.indices.map { index ->
             MemoryCard(images[index])
@@ -32,12 +35,27 @@ class MemoryActivity2 : AppCompatActivity() {
         buttons.forEachIndexed { index, button ->
             button.setOnClickListener {
                 Log.i(TAG, "button clicked!!")
-                // Update models
                 updateModels(index)
-                // Update the UI for the game
                 updateViews()
             }
         }
+        object: CountDownTimer(30000,1000){
+            override fun onTick(p0: Long) {
+                textView4.text="Left: "+p0/1000;
+            }
+
+            override fun onFinish() {
+                textView4.text="Left :0";
+                Toast.makeText(applicationContext,"Time's off",Toast.LENGTH_LONG).show()
+                val intent = Intent(this@MemoryActivity2, MainActivity::class.java).apply {
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                }
+                startActivityForResult(intent,1000);
+
+            }
+
+        }.start();
+
     }
 
     private fun updateViews() {
@@ -57,16 +75,11 @@ class MemoryActivity2 : AppCompatActivity() {
             Toast.makeText(this, "Invalid move!", Toast.LENGTH_SHORT).show()
             return
         }
-        // Three cases
-        // 0 cards previously flipped over => restore cards + flip over the selected card
-        // 1 card previously flipped over => flip over the selected card + check if the images match
-        // 2 cards previously flipped over => restore cards + flip over the selected card
+
         if (indexOfSingleSelectedCard == null) {
-            // 0 or 2 selected cards previously
             restoreCards()
             indexOfSingleSelectedCard = position
         } else {
-            // exactly 1 card was selected previously
             checkForMatch(indexOfSingleSelectedCard!!, position)
             indexOfSingleSelectedCard = null
         }
@@ -88,5 +101,6 @@ class MemoryActivity2 : AppCompatActivity() {
             cards[position2].isMatched = true
         }
     }
+
 
 }
